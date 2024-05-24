@@ -1,0 +1,23 @@
+syntax = "proto3"; // Specify proto3 version.
+
+package postPkg;
+
+message Post {
+    string id = 1;
+    string title = 2;
+    int32 user_id = 3;
+}
+message PostCreate {
+    string id = 1;
+}
+
+service postService {
+    rpc createPost(postRequest) returns (Empty) {}
+
+}
+message postRequest{
+    string title = 1;
+    int32 user_id = 2;
+}
+message Empty {}
+

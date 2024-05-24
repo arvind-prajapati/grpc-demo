@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@routes/*": [
+                "src/routes/*"
+            ],
+            "@GrpcClients/*": [
+                "GRPC/clients/*"
+            ],
+            "@GrpcServices" : [
+                "GRPC/services/*"
+            ],
+            "@GrpcServers" : [
+                "GRPC/servers/*"
+            ],
+            "@controllers" : [
+                "src/controllers/*"
+            ],
+            "@utility" : [
+                "src/utility/*"
+            ]
+        }
+    }
+}

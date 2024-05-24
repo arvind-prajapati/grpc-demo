@@ -1,0 +1,30 @@
+syntax = "proto3"; // Specify proto3 version.
+
+package userPkg;
+
+message User {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    repeated Post posts = 4;
+}
+message Post {
+    string id = 1;
+    string title = 2;
+    string user_id = 3; // Assuming posts have a userId to link to User
+}
+
+service userService {
+    rpc users(Empty) returns (GetResponse) {}
+    rpc createUser(userRequest) returns (Empty) {}
+
+}
+message userRequest{
+    string name = 1;
+    string email = 2;
+}
+message Empty {}
+
+message GetResponse {
+    repeated User data = 1;
+}
